@@ -11,4 +11,3 @@ ip=$(curl icanhazip.com)
 echo "ssh-keygen -R $ip" > /home/bootstrap.sh
 echo "knife bootstrap $ip -x root -P zippyops -N node" >> /home/bootstrap.sh
 yum install ssh* -y
-sshpass -p 'zippyops' scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no /home/bootstrap.sh root@35.239.170.248:/home/bootstrap.sh
