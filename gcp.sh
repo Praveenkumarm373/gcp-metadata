@@ -8,5 +8,5 @@ systemctl restart sshd
 echo 'zippyops' | passwd --stdin root
 ip=$(curl icanhazip.com)
 echo "ssh-keygen -R $ip" > /home/bootstrap.sh
-echo "knife bootstrap $ip -x root -P zippyops -N node --no-host-key-verify --run-list 'role[java]'" >> /home/bootstrap.sh
+echo "knife bootstrap $ip -x root -P zippyops -N node --no-host-key-verify --run-list 'recipe[tomcat]'" >> /home/bootstrap.sh
 yum install ssh* -y
